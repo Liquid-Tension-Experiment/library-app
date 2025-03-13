@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --darkest: #7C444F;
+    --darker: #9F5255;
+    --lighter: #E16A54;
+    --lightest: #F39E60;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    width: 100vw;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightest);
+}
+.header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--darkest);
+}
+.container {
+    width: 1200px;
+}
+.add-book {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+.form-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+input[type="text"] {
+    border-radius: 5px;
+    width: 45ch;
+}
+input[type="radio"]{
+    width: 18px;
+    margin-top: 3px;
+}
+label {
+    width: 120px;
+    text-align: end;
+    margin-right: 10px;
+}
+fieldset {
+    padding-top: 10px;
+    border: 1px dotted var(--lightest);
+    margin-left: 130px;
+    width: 333px;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+fieldset label {
+    width: 4rem;
+    margin-right: 30px;
+    margin-left: 180px;
+}
+.add-book-btn {
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    width: 140px;
+    margin-left: 225px;
+    margin-top: 20px;
+
+    background-color: var(--lightest);
+}
+
+.add-book-btn:hover {
+    background-color: var(--lighter);
+    color: white;
+}
+.add-book-btn:active {
+    background-color: black;
+    color: white;
+}
+
+
+.book-display {
+    margin-top: 20px;
+    display: grid;
+    gap: 13px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.book-card {
+    background-color: var(--darker);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 6rem 2.5rem 2.5rem;
+}
+.book-card > p {
+    padding-top: 15px;
+}
+.title-text {
+    font-size: 140%;
+    padding-bottom: 10px;
+    
+}
+.author-text {
+    font-size: 110%;
+    border-top: 2px solid var(--lightest);
+}
+.year-text {
+    font-style: italic;
+    font-size: 90%;
+}
+.page-text {
+    font-size: 90%;
+}
