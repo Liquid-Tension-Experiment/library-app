@@ -18,6 +18,12 @@ Book.prototype.updateReadStatus = function() {
 
 // Read form, then add and display the new entry
 addButton.addEventListener("click", (event)=> {
+    let f = document.querySelector(".add-book");
+    if(!f.checkValidity()) {
+        alert('Fill out all fields to add a new book.');
+        return;
+    }
+
     let newTitle = document.querySelector("#book-title").value;
     let newAuthor = document.querySelector("#book-author").value;
     let newYear = document.querySelector("#book-year").value;
@@ -40,7 +46,7 @@ addButton.addEventListener("click", (event)=> {
 
     addBookToLibrary(newTitle, newAuthor, newYear, newPages, newIsRead);
     displayBooks();
-    event.preventDefault();
+
 });
 
 
