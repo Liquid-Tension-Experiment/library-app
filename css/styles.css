@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
+    /* Decided not to use this color palette */
     --darkest: #7C444F;
     --darker: #9F5255;
     --lighter: #E16A54;
@@ -13,114 +14,109 @@
 }
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+    background-color: #F8FAFC;
+    line-height: 1.4;
     font-size: 1.2rem;
     width: 100vw;
-    min-height: 800px;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--lightest);
 }
-.header {
+.container {
+    display: flex;
+    width: 100%;
+}
+
+
+/* -------------------SIDEBAR STYLING -----------*/
+.sidebar {
+    background-color: #1F2937;
+    color: #E0E7FF;
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    width: 100%;
-    background-color: var(--darkest);
 }
-.container {
-    width: 1200px;
-}
-.add-book {
+
+form.add-book {
     color: white;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
 }
+
+/* --------------FORM STYLING ------------ */
+form {
+    padding: 20px 30px;
+}
 .form-row {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: start;
 }
 input[type="text"] {
+    background-color: #ECECEC;
+    font-size: 105%;
+    padding: 10px;
     border-radius: 5px;
-    width: 45ch;
+    margin-bottom: 10px;
+    height: 2rem;
+    width: 32ch;
 }
 input[type="radio"]{
-    width: 18px;
-    margin-top: 3px;
+    width: 28px;
+    height: 17px;
+    margin-top: 7px;
+    margin-left: 15px;
 }
-label {
-    width: 120px;
-    text-align: end;
-    margin-right: 10px;
+.radio-box .form-row {
+    flex-direction: row;
+    margin-bottom: 8px;
+    gap: 15px;
 }
 fieldset {
-    padding-top: 10px;
-    border: 1px dotted var(--lightest);
-    margin-left: 130px;
-    width: 333px;
-    font-size: 120%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-fieldset label {
-    width: 4rem;
-    margin-right: 30px;
-    margin-left: 180px;
-}
-.add-book-btn {
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 1.3rem;
     padding: 10px;
-    width: 140px;
-    margin-left: 225px;
-    margin-top: 20px;
+    border: 1px dotted #F8FAFC;
+    font-size: 110%;
+    gap: 8rem;
 
-    background-color: var(--lightest);
+}
+label {
+    font-size: 110%;
+    margin-bottom: 2px;
 }
 
-.add-book-btn:hover {
-    background-color: var(--lighter);
-    color: white;
-}
-.add-book-btn:active {
-    background-color: black;
-    color: white;
-}
-
-
+/*---------------- MAIN CONTENT STYLING -----------------*/
 .book-display {
-    margin-top: 20px;
+    width: 100%;
+    padding: 15px 25px;
     display: grid;
     gap: 13px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-auto-rows: max-content;
 }
 .book-card {
-    background-color: var(--darker);
-    color: white;
-    text-align: center;
-    padding: 15px;
+    background-color: #E0E7FF;
+    color: #111827;
     border-radius: 20px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
     display: grid;
+    text-align: center;
     align-items: center;
     grid-template-rows: 6rem 2.5rem 2.5rem;
+    padding: 12px;
 }
 .book-card > p {
     padding-top: 15px;
+    font-weight: 500;
 }
 .title-text {
-    font-size: 140%;
+    font-size: 145%;
     padding-bottom: 10px;
     
 }
 .author-text {
     font-size: 110%;
-    border-top: 2px solid var(--lightest);
+    border-top: 2px solid gray;
 }
 .year-text {
     font-style: italic;
@@ -128,4 +124,53 @@ fieldset label {
 }
 .page-text {
     font-size: 90%;
+}
+.read-text {
+    font-size: 90%;
+    margin-top: 8px;
+    border-top: 2px solid gray;
+}
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+/* --------------------- BUTTON STYLING --------------- */
+.btn-main {
+    background-color: #1E3A8A;
+    color:#F8FAFC;
+    border: 3px solid #F8FAFC;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 90%;
+}
+.add-book-btn:hover {
+    background-color: #4B5563;
+    color: white;
+    cursor: pointer;
+}
+.add-book-btn:active,
+.btn-main:active{
+    /* this would not work on card buttons without important, not sure why */
+    background-color: black !important;
+    color: white;
+}
+.btn-main:hover {
+    background-color: #4B5563;
+    cursor: pointer;
+}
+.add-book-btn {
+    background-color: #1E3A8A;
+    color: #F8FAFC;
+    border: 2px solid #F8FAFC;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    width: 160px;
+    align-self: center;
+    margin-top: 20px;
 }
