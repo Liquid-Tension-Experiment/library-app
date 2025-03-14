@@ -2,19 +2,21 @@ const myLibrary = [];
 const bookDisplay = document.querySelector(".book-display")
 const addButton = document.querySelector(".add-book-btn");
 
-function Book(title, author, year, pageCount, beenRead) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.beenRead = beenRead;
-    this.year = year;
-    this.idNum = crypto.randomUUID().toString();
-}
+class Book {
+    constructor(title, author, year, pageCount, beenRead){
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.beenRead = beenRead;
+        this.year = year;
+        this.idNum = crypto.randomUUID().toString();
+    }
 
-Book.prototype.updateReadStatus = function() {
-    this.beenRead = !this.beenRead;
-    displayBooks();
-};
+    updateReadStatus(){
+        this.beenRead = !this.beenRead;
+        displayBooks();
+    }
+}
 
 // Read form, then add and display the new entry
 addButton.addEventListener("click", (event)=> {
