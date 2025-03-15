@@ -19,12 +19,12 @@ class Book {
 }
 
 // Read form, then add and display the new entry
-addButton.addEventListener("click", (event)=> {
+addButton.addEventListener("click", (e)=> {
     let f = document.querySelector(".add-book");
     if(!f.checkValidity()) {
-        alert('Fill out all fields to add a new book.');
         return;
     }
+    e.preventDefault();
 
     let newTitle = document.querySelector("#book-title").value;
     let newAuthor = document.querySelector("#book-author").value;
@@ -39,16 +39,15 @@ addButton.addEventListener("click", (event)=> {
             radBut.checked = false;
         }
     }
-
+    
     // clear forms
     let inputFields = document.querySelectorAll("input[type='text']");
     for (const a of inputFields){
         a.value = "";
     }
-
+    
     addBookToLibrary(newTitle, newAuthor, newYear, newPages, newIsRead);
     displayBooks();
-
 });
 
 
